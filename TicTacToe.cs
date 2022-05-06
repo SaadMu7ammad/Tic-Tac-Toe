@@ -13,7 +13,7 @@ namespace Tic_Tac_Toe
     public partial class Form1 : Form
     {
         string turn = "O"; 
-        int count = 0;
+        int count = 0;  //count the clicks to handle the draw event
 
         public Form1()
         {
@@ -22,8 +22,8 @@ namespace Tic_Tac_Toe
 
         private void Button_Click(object sender, EventArgs e)
         {
-            Button b = new Button();
-            b = (Button)sender;
+            Button b = new Button(); //make an object of Button a
+            b = (Button)sender;   // the sender of Object type casted to a button to make any of buttons click been detected
             if (turn == "X")
             {
                 turn = "O";
@@ -36,10 +36,10 @@ namespace Tic_Tac_Toe
             }
              b.Text = turn;
             b.Enabled=false;
-            HorizontalChecker();
-            VerticalChecker();
-            DiagonalChecker();
-            if (count == 9)
+            HorizontalChecker();  //Horizontal Boxes
+            VerticalChecker();   //Vertical Boxes
+            DiagonalChecker();   //Diagonal Boxes
+            if (count == 9) // mean that not any of the checker detects a win situation
             {
                 MessageBox.Show("Draw ","No Win !" );
                 Application.Exit();
